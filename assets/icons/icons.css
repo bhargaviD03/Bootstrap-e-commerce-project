@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Icon fonts — subset of the original template's fonts.css
+   Only the two families and the glyphs actually used on this page are
+   declared, instead of the original 27 KB / ~2500-class stylesheet.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Material Design Icons";
+  src: url("../fonts/materialdesignicons-webfont.woff2") format("woff2"),
+       url("../fonts/materialdesignicons-webfont.woff") format("woff"),
+       url("../fonts/materialdesignicons-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Linearicons";
+  src: url("../fonts/Linearicons.woff") format("woff"),
+       url("../fonts/Linearicons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.mdi,
+[class^="mdi-"],
+[class*=" mdi-"] {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="linearicons-"],
+[class*=" linearicons-"] {
+  display: inline-block;
+  font-family: "Linearicons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Design Icons -------------------------------------------------- */
+.mdi-phone::before        { content: "\f4e1"; }
+.mdi-map-marker::before   { content: "\f440"; }
+.mdi-facebook::before     { content: "\f301"; }
+.mdi-twitter::before      { content: "\f631"; }
+.mdi-instagram::before    { content: "\f3f1"; }
+.mdi-google-plus::before  { content: "\f3b0"; }
+.mdi-star::before         { content: "\f5bc"; }
+.mdi-email::before        { content: "\f2e3"; }
+.mdi-telegram::before     { content: "\f5ef"; }
+.mdi-arrow-up::before     { content: "\f156"; }
+.mdi-arrow-left::before   { content: "\f14a"; }
+.mdi-arrow-right::before  { content: "\f14f"; }
+.mdi-close::before        { content: "\f24c"; }
+
+/* Linearicons ------------------------------------------------------------ */
+.linearicons-leaf::before       { content: "\eb2d"; }
+.linearicons-pizza::before      { content: "\eb1c"; }
+.linearicons-hamburger::before  { content: "\eb1a"; }
+.linearicons-ice-cream::before  { content: "\eb23"; }
+.linearicons-coffee-cup::before { content: "\eb28"; }
+.linearicons-steak::before      { content: "\eb19"; }
+.linearicons-bag::before        { content: "\ea4b"; }
+.linearicons-map2::before       { content: "\ea82"; }
+.linearicons-radar::before      { content: "\ea7f"; }
+.linearicons-thumbs-up::before  { content: "\ec19"; }
+.linearicons-magnifier::before  { content: "\ec22"; }

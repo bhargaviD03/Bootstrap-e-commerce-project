@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Animation system
+   Replaces WOW.js + animate.css with a small declarative layer driven by
+   IntersectionObserver (js/animations.js).
+
+     <div data-animation="fadeInUp" data-delay="150" data-duration="700">
+
+   Keyframes and timings are ported 1:1 from the original template's
+   style.css (.animated => .7s, fill-mode both; fade* travel 40px,
+   slide* travel 100%).
+   ========================================================================== */
+
+:root {
+  --anim-duration: 0.7s;
+}
+
+/* Elements queued for a scroll-triggered animation are hidden until the
+   observer fires. `.js-anim` is added by JS so the content stays visible
+   when JavaScript is unavailable. */
+.js-anim[data-animation] {
+  visibility: hidden;
+  animation-duration: var(--anim-duration);
+  animation-fill-mode: both;
+}
+
+.js-anim[data-animation].is-animated {
+  visibility: visible;
+}
+
+/* `.oh-desktop` clips so slideIn* animations wipe in from the edge of their
+   own box — the original scopes this to `.desktop`, i.e. >= 992px only.
+   `.oh` is deliberately NOT a clipping context: the reference declares the
+   class but never gives it `overflow: hidden`, so the hero headline is
+   allowed to spill past its column instead of being cut off. */
+.oh {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .oh-desktop {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-anim[data-animation] {
+    visibility: visible;
+    animation: none !important;
+  }
+}
+
+/* Keyframes -------------------------------------------------------------- */
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translate3d(0, 40px, 0); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes fadeInDown {
+  0%   { opacity: 0; transform: translate3d(0, -40px, 0); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes fadeInLeft {
+  0%   { opacity: 0; transform: translate3d(-40px, 0, 0); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes fadeInRight {
+  0%   { opacity: 0; transform: translate3d(40px, 0, 0); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes slideInUp {
+  0%   { transform: translate3d(0, 100%, 0); visibility: visible; }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInDown {
+  0%   { transform: translate3d(0, -100%, 0); visibility: visible; }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInLeft {
+  0%   { transform: translate3d(-100%, 0, 0); visibility: visible; }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInRight {
+  0%   { transform: translate3d(100%, 0, 0); visibility: visible; }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Animation-name bindings ------------------------------------------------ */
+
+[data-animation="fadeIn"].is-animated      { animation-name: fadeIn; }
+[data-animation="fadeInUp"].is-animated    { animation-name: fadeInUp; }
+[data-animation="fadeInDown"].is-animated  { animation-name: fadeInDown; }
+[data-animation="fadeInLeft"].is-animated  { animation-name: fadeInLeft; }
+[data-animation="fadeInRight"].is-animated { animation-name: fadeInRight; }
+[data-animation="slideInUp"].is-animated    { animation-name: slideInUp; }
+[data-animation="slideInDown"].is-animated  { animation-name: slideInDown; }
+[data-animation="slideInLeft"].is-animated  { animation-name: slideInLeft; }
+[data-animation="slideInRight"].is-animated { animation-name: slideInRight; }
+
+/* Hero caption animations ------------------------------------------------
+   Driven by js/slider.js rather than the observer: captions replay on every
+   slide change, so they get their own not-animated / is-animated pair. */
+
+.hero-caption-anim {
+  visibility: hidden;
+  animation-duration: var(--anim-duration);
+  animation-fill-mode: both;
+}
+
+.hero-caption-anim.is-animated {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-caption-anim {
+    visibility: visible;
+    animation: none !important;
+  }
+}
+
+/* Component keyframes ---------------------------------------------------- */
+
+/* Preloader: penrose-triangle wipe (ported from the original). */
+@keyframes tri  { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes tri1 { 0%, 0%        { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri2 { 0%, 14.28571% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri3 { 0%, 28.57143% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri4 { 0%, 42.85714% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri5 { 0%, 57.14286% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri6 { 0%, 71.42857% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tri7 { 0%, 85.71429% { opacity: 0; } 100% { opacity: 1; } }
+
+@keyframes preloaderScale {
+  0%   { transform: scale(2.45); }
+  100% { transform: scale(0.5); }
+}
+
+/* Hamburger bar sweep on the gallery-panel trigger. */
+@keyframes pagInX  { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }
+@keyframes pagOutX { 0% { transform: translateX(0); }    100% { transform: translateX(100%); } }
+
+/* Looping tint cycle on the feature icons. */
+@keyframes iconClassic {
+  30%  { color: #151515; background: #f3f3f3; }
+  33%  { color: #ffffff; background: #6046b6; }
+  64%  { color: #ffffff; background: #6046b6; }
+  67%  { color: #151515; background: #ffe745; }
+  97%  { color: #151515; background: #ffe745; }
+}

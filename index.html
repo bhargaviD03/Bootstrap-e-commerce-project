@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PizzaHouse — perfect pizza made with quality ingredients. Browse our menu, book a table and see the gallery.">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>PizzaHouse — Perfect Pizza in Orlando</title>
+
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&family=Raleway:wght@500&display=swap">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/icons/icons.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" role="status" aria-label="Loading">
+    <div class="preloader-wrap">
+      <div class="preloader-pen">
+        <div class="preloader-line">
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+        </div>
+        <div class="preloader-line">
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+        </div>
+        <div class="preloader-line">
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+          <div class="preloader-triangle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- Top promo banner (desktop only, as in the reference) -->
+    <a class="section section-banner section-banner-top text-center d-none d-xl-block"
+       href="https://www.templatemonster.com/intense-multipurpose-html-template.html">
+      <img src="assets/images/banner/foreground-04-1600x60.png"
+           alt="Intense — multipurpose HTML template" width="1600" height="60">
+    </a>
+
+    <!-- Header -->
+    <header class="section page-header">
+      <nav class="navbar navbar-expand-lg navbar-main" aria-label="Main navigation">
+        <div class="navbar-inner">
+
+          <!-- Mobile menu trigger (Bootstrap Collapse) -->
+          <button class="navbar-toggler" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#primary-navigation"
+                  aria-expanded="false" aria-controls="primary-navigation"
+                  aria-label="Toggle navigation">
+            <span class="hamburger"><span></span><span></span><span></span></span>
+          </button>
+
+          <!-- Logo -->
+          <div class="navbar-panel">
+            <a class="navbar-brand-custom" href="index.html">
+              <img src="assets/images/logo-198x66.png" alt="PizzaHouse" width="198" height="66">
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse navbar-right" id="primary-navigation">
+
+            <!-- Contacts + social -->
+            <div class="navbar-aside">
+              <ul class="navbar-contacts">
+                <li>
+                  <div class="unit">
+                    <span class="icon mdi mdi-phone" aria-hidden="true"></span>
+                    <a class="phone" href="tel:+17189993939">+1 718-999-3939</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="unit">
+                    <span class="icon mdi mdi-map-marker" aria-hidden="true"></span>
+                    <a class="address" href="#">514 S. Magnolia St. Orlando, FL 32806</a>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-share">
+                <li><a class="icon mdi mdi-facebook" href="#" aria-label="Facebook"></a></li>
+                <li><a class="icon mdi mdi-twitter" href="#" aria-label="Twitter"></a></li>
+                <li><a class="icon mdi mdi-instagram" href="#" aria-label="Instagram"></a></li>
+                <li><a class="icon mdi mdi-google-plus" href="#" aria-label="Google Plus"></a></li>
+              </ul>
+            </div>
+
+            <!-- Primary nav -->
+            <div class="navbar-nav-wrap">
+              <ul class="navbar-nav nav-list">
+                <li class="nav-item active"><a class="nav-link-custom" href="index.html" aria-current="page">Home</a></li>
+                <li class="nav-item"><a class="nav-link-custom" href="#menu">About us</a></li>
+                <li class="nav-item"><a class="nav-link-custom" href="#gallery">Typography</a></li>
+                <li class="nav-item"><a class="nav-link-custom" href="#book">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Gallery side-panel trigger (Bootstrap Offcanvas) -->
+          <button class="gallery-toggle" type="button"
+                  data-bs-toggle="offcanvas" data-bs-target="#gallery-panel"
+                  aria-controls="gallery-panel" aria-label="Open gallery panel">
+            <span class="hamburger"><span></span><span></span><span></span></span>
+          </button>
+
+        </div>
+      </nav>
+    </header>
+
+    <!-- Gallery side panel -->
+    <aside class="offcanvas offcanvas-end gallery-panel" id="gallery-panel"
+           tabindex="-1" aria-labelledby="gallery-panel-title">
+      <div class="gallery-panel-header">
+        <h5 class="gallery-panel-title" id="gallery-panel-title">Gallery</h5>
+        <button class="gallery-panel-close" type="button"
+                data-bs-dismiss="offcanvas" aria-label="Close gallery panel">
+          <span class="project-close"><span></span><span></span></span>
+        </button>
+      </div>
+
+      <div class="offcanvas-body">
+      <div class="row g-3">
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-1-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-1-195x164.jpg" alt="Freshly baked pizza on a wooden board" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-2-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-2-195x164.jpg" alt="Chef preparing pizza dough" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-3-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-3-195x164.jpg" alt="Assorted pizza toppings" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-4-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-4-195x164.jpg" alt="Restaurant dining area" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-5-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-5-195x164.jpg" alt="Pizza served at the table" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="col-6">
+          <article class="thumbnail thumbnail-creative">
+            <a href="assets/images/project-6-1200x800-original.jpg" data-lightbox="panel">
+              <div class="thumbnail-creative-figure">
+                <img src="assets/images/project-6-195x164.jpg" alt="Close-up of a pizza slice" width="195" height="164">
+              </div>
+              <div class="thumbnail-creative-caption">
+                <span class="thumbnail-creative-icon linearicons-magnifier" aria-hidden="true"></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+      </div>
+    </aside>
+
+    <!-- Hero slider -->
+    <section class="hero" data-hero-slider data-autoplay="5000" aria-label="Featured">
+      <div class="hero-track">
+
+        <div class="hero-slide context-dark is-active" data-slide-bg="assets/images/slide-1-1920x753.jpg">
+          <div class="hero-caption">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-9 col-md-8 col-lg-7 offset-lg-1">
+                  <h1 class="oh hero-title">
+                    <span class="d-inline-block hero-caption-anim"
+                          data-caption-animate="slideInUp" data-caption-delay="0">Perfect pizza</span>
+                  </h1>
+                  <p class="hero-text hero-caption-anim"
+                     data-caption-animate="fadeInLeft" data-caption-delay="300">
+                    Experience the taste of a perfect pizza at PizzaHouse, one of the best restaurants!
+                  </p>
+                  <div class="hero-button">
+                    <a class="btn-custom btn-custom-lg btn-custom-primary btn-shadow hero-caption-anim"
+                       href="#menu" data-caption-animate="fadeInUp" data-caption-delay="300">View our menu</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide context-dark" data-slide-bg="assets/images/slide-2-1920x753.jpg">
+          <div class="hero-caption">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-lg-7 offset-lg-1">
+                  <h1 class="oh hero-title">
+                    <span class="d-inline-block hero-caption-anim"
+                          data-caption-animate="slideInDown" data-caption-delay="0">Quality ingredients</span>
+                  </h1>
+                  <p class="hero-text hero-caption-anim"
+                     data-caption-animate="fadeInRight" data-caption-delay="300">
+                    We use only the best ingredients to make one-of-a-kind pizzas for our customers.
+                  </p>
+                  <div class="hero-button oh">
+                    <a class="btn-custom btn-custom-lg btn-custom-primary btn-shadow hero-caption-anim"
+                       href="#menu" data-caption-animate="slideInUp" data-caption-delay="0">View our menu</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-pagination"></div>
+
+      <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Previous slide">
+        <span class="hero-arrow-preview"><span class="hero-arrow-preview-img"></span></span>
+        <span class="hero-arrow-icon mdi mdi-arrow-left" aria-hidden="true"></span>
+      </button>
+
+      <button class="hero-arrow hero-arrow-next" type="button" aria-label="Next slide">
+        <span class="hero-arrow-icon mdi mdi-arrow-right" aria-hidden="true"></span>
+        <span class="hero-arrow-preview"><span class="hero-arrow-preview-img"></span></span>
+      </button>
+    </section>
+
+    <!-- Our Menu -->
+    <section class="section section-md bg-default" id="menu">
+      <div class="container">
+        <h3 class="oh-desktop">
+          <span class="d-inline-block" data-animation="slideInDown">Our Menu</span>
+        </h3>
+
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInUp">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-1-370x278.jpg" alt="Fresh mixed salad" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-leaf" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Salads</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInDown">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-2-370x278.jpg" alt="Stone-baked pizza" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-pizza" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Pizzas</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInUp">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-3-370x278.jpg" alt="Char-grilled burger" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-hamburger" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Burgers</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInDown">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-4-370x278.jpg" alt="Dessert with berries" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-ice-cream" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Desserts</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInUp">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-5-370x278.jpg" alt="Chilled drinks" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-coffee-cup" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Drinks</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="oh-desktop">
+              <article class="services-card" data-animation="slideInDown">
+                <div class="services-card-figure">
+                  <img src="assets/images/menu-6-370x278.jpg" alt="Grilled seafood platter" width="370" height="278">
+                </div>
+                <div class="services-card-caption">
+                  <span class="services-card-icon linearicons-steak" aria-hidden="true"></span>
+                  <h5 class="services-card-title"><a href="#">Seafood</a></h5>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / parallax 1 -->
+    <section class="section parallax-container" data-parallax-img="assets/images/bg-3.jpg">
+      <div class="parallax-content section-xl context-dark">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-sm-8 col-md-7 col-lg-5">
+              <div class="cta-modern">
+                <h3 class="cta-modern-title" data-animation="fadeInRight">Best atmosphere</h3>
+                <p class="lead">PizzaHouse is the place of the best pizza and high-quality service.</p>
+                <p class="cta-modern-text oh-desktop">
+                  <span class="cta-modern-decor" data-animation="slideInLeft" data-delay="100"></span>
+                  <span class="d-inline-block" data-animation="slideInDown" data-delay="100">Ben Smith, Founder</span>
+                </p>
+                <a class="btn-custom btn-custom-md btn-custom-accent" href="#"
+                   data-animation="fadeInUp" data-delay="200">View Our Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Pizzas -->
+    <section class="section section-lg bg-default" id="shop">
+      <div class="container">
+        <h3 class="oh-desktop">
+          <span class="d-inline-block" data-animation="slideInUp">Selected Pizzas</span>
+        </h3>
+
+        <div class="row g-4 mt-1">
+          <div class="col-sm-6 col-lg-4 col-xl-3">
+            <article class="product" data-animation="fadeInLeft" data-delay="150">
+              <div class="product-figure">
+                <img src="assets/images/product-1-161x162.png" alt="Margherita pizza" width="161" height="162">
+              </div>
+              <div class="product-rating" role="img" aria-label="Rated 4 out of 5">
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star is-muted"></span>
+              </div>
+              <h6 class="product-title">Margherita Pizza</h6>
+              <div class="product-price-wrap">
+                <div class="product-price">$24.00</div>
+              </div>
+              <div class="product-button">
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-primary" href="#">Add to cart</a></div>
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-secondary" href="#">View Product</a></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 col-xl-3">
+            <article class="product" data-animation="fadeInLeft" data-delay="100">
+              <div class="product-figure">
+                <img src="assets/images/product-2-161x162.png" alt="Mushroom pizza" width="161" height="162">
+              </div>
+              <div class="product-rating" role="img" aria-label="Rated 5 out of 5">
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span>
+              </div>
+              <h6 class="product-title">Mushroom Pizza</h6>
+              <div class="product-price-wrap">
+                <div class="product-price">$24.00</div>
+              </div>
+              <div class="product-button">
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-primary" href="#">Add to cart</a></div>
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-secondary" href="#">View Product</a></div>
+              </div>
+              <span class="product-badge product-badge-new">New</span>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 col-xl-3">
+            <article class="product" data-animation="fadeInLeft" data-delay="50">
+              <div class="product-figure">
+                <img src="assets/images/product-3-161x162.png" alt="Hawaiian pizza" width="161" height="162">
+              </div>
+              <div class="product-rating" role="img" aria-label="Rated 4 out of 5">
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star is-muted"></span>
+              </div>
+              <h6 class="product-title">Hawaiian Pizza</h6>
+              <div class="product-price-wrap">
+                <div class="product-price">$24.00</div>
+              </div>
+              <div class="product-button">
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-primary" href="#">Add to cart</a></div>
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-secondary" href="#">View Product</a></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 col-xl-3">
+            <article class="product" data-animation="fadeInLeft">
+              <div class="product-figure">
+                <img src="assets/images/product-4-161x162.png" alt="Pesto pizza" width="161" height="162">
+              </div>
+              <div class="product-rating" role="img" aria-label="Rated 5 out of 5">
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                <span class="mdi mdi-star"></span>
+              </div>
+              <h6 class="product-title">Pesto Pizza</h6>
+              <div class="product-price-wrap">
+                <div class="product-price product-price-old">$40.00</div>
+                <div class="product-price">$24.00</div>
+              </div>
+              <div class="product-button">
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-primary" href="#">Add to cart</a></div>
+                <div class="btn-wrap"><a class="btn-custom btn-custom-xs btn-custom-secondary" href="#">View Product</a></div>
+              </div>
+              <span class="product-badge product-badge-sale">Sale</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / parallax 2 -->
+    <section class="section parallax-container" data-parallax-img="assets/images/bg-4.jpg">
+      <div class="parallax-content section-xxl context-dark">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-sm-9 col-md-7 col-lg-5">
+              <div class="cta-modern">
+                <h3 class="cta-modern-title cta-modern-title-2 oh-desktop">
+                  <span class="d-inline-block" data-animation="fadeInLeft">-30% on all salads &amp; drinks</span>
+                </h3>
+                <p class="cta-modern-text cta-modern-text-2 oh-desktop">
+                  <span class="cta-modern-decor cta-modern-decor-2" data-animation="slideInLeft" data-delay="100"></span>
+                  <span class="d-inline-block" data-animation="slideInUp" data-delay="100">Taste some of the best PizzaHouse salads!</span>
+                </p>
+                <a class="btn-custom btn-custom-lg btn-custom-primary" href="#book"
+                   data-animation="fadeInRight" data-delay="200">Contact us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-xl bg-default">
+      <div class="container">
+        <h3 data-animation="fadeInLeft">What People Say</h3>
+      </div>
+
+      <div class="container">
+        <div class="testimonials" data-testimonials>
+          <div class="testimonials-viewport">
+            <div class="testimonials-track">
+
+              <div class="testimonial-item">
+                <article class="quote-card">
+                  <div class="quote-card-caption">
+                    <div class="quote-card-text">
+                      <p class="q">PizzaHouse is the longest lasting pizza place in the city and is well run and staffed. Prices are great and allow me to keep coming back.</p>
+                    </div>
+                    <div class="quote-card-figure">
+                      <img src="assets/images/user-6-115x115.jpg" alt="Ashley Fitzgerald" width="115" height="115">
+                    </div>
+                  </div>
+                  <h6 class="quote-card-author">Ashley Fitzgerald</h6>
+                  <div class="quote-card-status">Client</div>
+                </article>
+              </div>
+
+              <div class="testimonial-item">
+                <article class="quote-card">
+                  <div class="quote-card-caption">
+                    <div class="quote-card-text">
+                      <p class="q">I am a real pizza addict, and even when I&rsquo;m home I prefer your pizzas to all others. They taste awesome and are very affordable.</p>
+                    </div>
+                    <div class="quote-card-figure">
+                      <img src="assets/images/user-8-115x115.jpg" alt="Stephanie Williams" width="115" height="115">
+                    </div>
+                  </div>
+                  <h6 class="quote-card-author">Stephanie Williams</h6>
+                  <div class="quote-card-status">Client</div>
+                </article>
+              </div>
+
+              <div class="testimonial-item">
+                <article class="quote-card">
+                  <div class="quote-card-caption">
+                    <div class="quote-card-text">
+                      <p class="q">PizzaHouse has amazing pizza. Not only do you get served with a great attitude, you also get delicious pizza at a great price!</p>
+                    </div>
+                    <div class="quote-card-figure">
+                      <img src="assets/images/user-7-115x115.jpg" alt="Bill Johnson" width="115" height="115">
+                    </div>
+                  </div>
+                  <h6 class="quote-card-author">Bill Johnson</h6>
+                  <div class="quote-card-status">Client</div>
+                </article>
+              </div>
+
+              <div class="testimonial-item">
+                <article class="quote-card">
+                  <div class="quote-card-caption">
+                    <div class="quote-card-text">
+                      <p class="q">PizzaHouse has great pizza. Not only do you get served with a great attitude and delivered delicious pizza, you get a great price.</p>
+                    </div>
+                    <div class="quote-card-figure">
+                      <img src="assets/images/user-9-115x115.jpg" alt="Aaron Wilson" width="115" height="115">
+                    </div>
+                  </div>
+                  <h6 class="quote-card-author">Aaron Wilson</h6>
+                  <div class="quote-card-status">Client</div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="testimonials-nav">
+            <button type="button" class="mdi mdi-arrow-left" data-testimonials-prev aria-label="Previous testimonial"></button>
+            <button type="button" class="mdi mdi-arrow-right" data-testimonials-next aria-label="Next testimonial"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section-last section-gallery bg-default" id="gallery">
+      <div class="container-fluid px-0">
+        <div class="gallery-masonry" data-masonry-grid>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="1" data-span-xl="1">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-2" data-animation="slideInLeft">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-1-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-1-310x585.jpg" alt="Selection of fresh pizza ingredients" width="310" height="585">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Best Ingredients</a></h6>
+                  <div class="thumbnail-mary-location">Tasty Pizza</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="2" data-span-xl="2">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-big" data-animation="slideInRight">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-2-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-2-631x587.jpg" alt="Comfortable restaurant interior" width="631" height="587">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Comfortable interior</a></h6>
+                  <div class="thumbnail-mary-location">Modern Design</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="1" data-span-xl="1">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-2" data-animation="slideInDown">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-3-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-3-311x289.jpg" alt="Table set with quality dishware" width="311" height="289">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Quality Dishware</a></h6>
+                  <div class="thumbnail-mary-location">Top-notch utensils</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="2" data-span-xl="2">
+            <article class="thumbnail thumbnail-mary" data-animation="slideInUp">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-4-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-4-631x289.jpg" alt="Refreshing cocktails on the bar" width="631" height="289">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Refreshing cocktails</a></h6>
+                  <div class="thumbnail-mary-location">Exclusive selection</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="1" data-span-xl="1">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-2" data-animation="slideInUp">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-5-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-5-311x289.jpg" alt="Exotic summer salad" width="311" height="289">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Exotic Salads</a></h6>
+                  <div class="thumbnail-mary-location">Summer Taste</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="1" data-span-xl="1">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-2" data-animation="slideInRight">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-6-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-6-311x289.jpg" alt="Different types of pizza" width="311" height="289">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">All Types of pizza</a></h6>
+                  <div class="thumbnail-mary-location">Special Recipes</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-cell" data-span-xs="1" data-span-sm="1" data-span-xl="1">
+            <article class="thumbnail thumbnail-mary thumbnail-mary-2" data-animation="slideInLeft">
+              <a class="thumbnail-mary-figure" href="assets/images/gallery-7-1200x800-original.jpg" data-lightbox="gallery">
+                <img src="assets/images/gallery-7-311x289.jpg" alt="Diverse menu of dishes" width="311" height="289">
+              </a>
+              <div class="thumbnail-mary-caption">
+                <div>
+                  <h6 class="thumbnail-mary-title"><a href="#">Diverse menu</a></h6>
+                  <div class="thumbnail-mary-location">Pick Your Favorite dish</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Book your table -->
+    <section class="section section-sm bg-default" id="book">
+      <div class="container">
+        <h3>Book your Table</h3>
+
+        <form class="rd-form mt-4" data-form data-form-type="contact" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6 col-lg-4 oh-desktop">
+              <div class="form-wrap" data-animation="slideInDown">
+                <input class="form-input" id="booking-name" type="text" name="name" data-constraints="@Required" autocomplete="name">
+                <label class="form-label" for="booking-name">Your Name*</label>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 oh-desktop">
+              <div class="form-wrap" data-animation="slideInUp">
+                <input class="form-input" id="booking-email" type="email" name="email" data-constraints="@Email @Required" autocomplete="email">
+                <label class="form-label" for="booking-email">Your E-mail*</label>
+              </div>
+            </div>
+
+            <div class="col-lg-4 oh-desktop">
+              <div class="form-wrap" data-animation="slideInDown">
+                <label class="visually-hidden" for="booking-service">Select a Service</label>
+                <select class="form-input" id="booking-service" name="service" data-constraints="@Required">
+                  <option value="">Select a Service</option>
+                  <option value="dine-in">Dine-In</option>
+                  <option value="carry-out">Carry-Out</option>
+                  <option value="event-catering">Event Catering</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-wrap form-wrap-textarea" data-animation="fadeIn">
+                <textarea class="form-input textarea-lg" id="booking-message" name="message" data-constraints="@Required"></textarea>
+                <label class="form-label" for="booking-message">Message</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="group-custom">
+            <button class="btn-custom btn-custom-lg btn-custom-primary" type="submit"
+                    data-animation="fadeInRight">Send message</button>
+
+            <article class="quote-classic" data-animation="slideInDown">
+              <div class="quote-classic-text">
+                <p class="q">Please reserve your table at least 1 day in advance.</p>
+              </div>
+            </article>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section-sm bg-default">
+      <div class="container">
+        <div class="features" data-features>
+          <div class="features-viewport">
+            <div class="features-track">
+
+              <div class="feature-item">
+                <article class="box-icon" data-animation="fadeInUp">
+                  <div class="box-icon-header">
+                    <div class="box-icon-icon linearicons-bag" aria-hidden="true"></div>
+                  </div>
+                  <h5 class="box-icon-title"><a href="#">Free Delivery</a></h5>
+                  <p class="box-icon-text">If you order more than 3 pizzas, we will gladly deliver them to you for free.</p>
+                </article>
+              </div>
+
+              <div class="feature-item">
+                <article class="box-icon" data-animation="fadeInUp" data-delay="50">
+                  <div class="box-icon-header">
+                    <div class="box-icon-icon linearicons-map2" aria-hidden="true"></div>
+                  </div>
+                  <h5 class="box-icon-title"><a href="#">Convenient Location</a></h5>
+                  <p class="box-icon-text">Our pizzeria is situated in the downtown and is very easy to reach even on weekends.</p>
+                </article>
+              </div>
+
+              <div class="feature-item">
+                <article class="box-icon" data-animation="fadeInUp" data-delay="100">
+                  <div class="box-icon-header">
+                    <div class="box-icon-icon linearicons-radar" aria-hidden="true"></div>
+                  </div>
+                  <h5 class="box-icon-title"><a href="#">Free Wi-Fi</a></h5>
+                  <p class="box-icon-text">We have free Wi-Fi available to all clients and visitors of our pizzeria.</p>
+                </article>
+              </div>
+
+              <div class="feature-item">
+                <article class="box-icon" data-animation="fadeInUp" data-delay="150">
+                  <div class="box-icon-header">
+                    <div class="box-icon-icon linearicons-thumbs-up" aria-hidden="true"></div>
+                  </div>
+                  <h5 class="box-icon-title"><a href="#">Best Service</a></h5>
+                  <p class="box-icon-text">The client is our #1 priority as we deliver top-notch customer service.</p>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="features-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom promo banner -->
+    <a class="section section-banner section-banner-bottom"
+       href="https://www.templatemonster.com/intense-multipurpose-html-template.html">
+      <img src="assets/images/banner/foreground-03-1600x310.png"
+           alt="Get the full-featured Intense multipurpose HTML template" width="1600" height="310">
+    </a>
+
+    <!-- Footer -->
+    <footer class="section footer-modern context-dark">
+      <div class="footer-modern-line">
+        <div class="container">
+          <div class="row g-5">
+
+            <div class="col-md-6 col-lg-4">
+              <h5 class="footer-modern-title oh-desktop">
+                <span class="d-inline-block" data-animation="slideInLeft">What We Offer</span>
+              </h5>
+              <ul class="footer-modern-list" data-animation="fadeInUp">
+                <li><a href="#">Pizzas</a></li>
+                <li><a href="#">Burgers</a></li>
+                <li><a href="#">Salads</a></li>
+                <li><a href="#">Drinks</a></li>
+                <li><a href="#">Seafood</a></li>
+                <li><a href="#">Desserts</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3">
+              <h5 class="footer-modern-title oh-desktop">
+                <span class="d-inline-block" data-animation="slideInLeft">Information</span>
+              </h5>
+              <ul class="footer-modern-list" data-animation="fadeInUp">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Latest News</a></li>
+                <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#book">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-xl-5">
+              <h5 class="footer-modern-title oh-desktop">
+                <span class="d-inline-block" data-animation="slideInLeft">Newsletter</span>
+              </h5>
+              <p data-animation="fadeInRight">Sign up today for the latest news and updates.</p>
+
+              <form class="rd-form newsletter-form" data-form data-form-type="subscribe" novalidate>
+                <div class="form-wrap" data-animation="slideInUp">
+                  <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required" autocomplete="email">
+                  <label class="form-label" for="subscribe-email">Enter your E-mail</label>
+                </div>
+                <div data-animation="slideInRight">
+                  <button class="btn-custom btn-custom-sm btn-custom-primary" type="submit">
+                    <span class="d-none d-xl-inline-block">Subscribe</span>
+                    <span class="mdi mdi-telegram d-xl-none" aria-hidden="true"></span>
+                    <span class="visually-hidden d-xl-none">Subscribe</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-modern-line-2">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+
+            <div class="col-sm-6 col-md-7 col-lg-4">
+              <div class="row g-3 align-items-center text-lg-center">
+                <div class="col-md-7 col-xl-6">
+                  <a class="brand" href="index.html">
+                    <img src="assets/images/logo-inverse-198x66.png" alt="PizzaHouse" width="198" height="66">
+                  </a>
+                </div>
+                <div class="col-md-5 col-xl-6">
+                  <div class="iso-1">
+                    <span><img src="assets/images/like-icon-58x25.png" alt="" width="58" height="25"></span>
+                    <span class="iso-1-big">9.4k</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-12 col-lg-8 oh-desktop">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between gap-4">
+                <div class="footer-modern-contacts" data-animation="slideInUp">
+                  <div class="unit">
+                    <span class="icon mdi mdi-phone" aria-hidden="true"></span>
+                    <a class="phone" href="tel:+17189993939">+1 718-999-3939</a>
+                  </div>
+                </div>
+
+                <div class="footer-modern-contacts" data-animation="slideInDown">
+                  <div class="unit">
+                    <span class="icon mdi mdi-email" aria-hidden="true"></span>
+                    <a class="mail" href="mailto:info@demolink.org">info@demolink.org</a>
+                  </div>
+                </div>
+
+                <div data-animation="slideInRight">
+                  <ul class="footer-social-list">
+                    <li><a class="icon mdi mdi-facebook" href="#" aria-label="Facebook"></a></li>
+                    <li><a class="icon mdi mdi-twitter" href="#" aria-label="Twitter"></a></li>
+                    <li><a class="icon mdi mdi-instagram" href="#" aria-label="Instagram"></a></li>
+                    <li><a class="icon mdi mdi-google-plus" href="#" aria-label="Google Plus"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-modern-line-3">
+        <div class="container">
+          <div class="row g-2 justify-content-between">
+            <div class="col-md-6"><span>514 S. Magnolia St. Orlando, FL 32806</span></div>
+            <div class="col-md-auto">
+              <p class="rights">
+                <span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span>
+                <span>All Rights Reserved.</span>
+                <span> Design&nbsp;by&nbsp;<a href="https://www.templatemonster.com">TemplateMonster</a></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scroll to top -->
+  <button class="ui-to-top mdi mdi-arrow-up" type="button" aria-label="Back to top"></button>
+
+  <!-- Global form output -->
+  <div class="snackbars" id="form-output-global" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/slider.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+
+</html>
