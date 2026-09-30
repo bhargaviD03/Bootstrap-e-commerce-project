@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Hero slider
-   Reproduces the reference Swiper instance without the library:
-     - fade transition, 5 s autoplay, infinite loop
-     - prev/next arrows whose hover preview shows the adjacent slide
-     - ring pagination bullets (mobile / tablet)
-     - per-element caption entrance animations that replay on every change
-   ========================================================================== */
 
 (function () {
   'use strict';
@@ -77,7 +69,6 @@
       });
     }
 
-    // Pause while the pointer rests on the slider or the tab is hidden.
     this.root.addEventListener('mouseenter', function () { self.stop(); });
     this.root.addEventListener('mouseleave', function () { self.start(); });
     document.addEventListener('visibilitychange', function () {
@@ -85,7 +76,6 @@
       else self.start();
     });
 
-    // Touch swipe
     var startX = null;
     this.root.addEventListener('touchstart', function (e) {
       startX = e.changedTouches[0].clientX;
@@ -122,7 +112,6 @@
     this.animateCaption(this.slides[index], initial);
   };
 
-  /* Arrow hover previews show the slide they would navigate to. */
   HeroSlider.prototype.updateArrowPreviews = function () {
     var count = this.slides.length;
     var prev = this.slides[(this.index - 1 + count) % count];
@@ -138,8 +127,6 @@
     }
   };
 
-  /* Captions replay their entrance animation each time a slide becomes
-     active — the reference resets them via data-caption-animate. */
   HeroSlider.prototype.animateCaption = function (slide, initial) {
     var items = Array.prototype.slice.call(
       this.root.querySelectorAll('[data-caption-animate]')
@@ -161,7 +148,6 @@
       slide.querySelectorAll('[data-caption-animate]')
     );
 
-    // Force a reflow so removing and re-adding the class restarts the run.
     void this.root.offsetWidth;
 
     active.forEach(function (item) {

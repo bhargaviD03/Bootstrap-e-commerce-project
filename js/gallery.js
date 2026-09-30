@@ -1,19 +1,9 @@
-/* ==========================================================================
-   Gallery: masonry layout + lightbox
-   Replaces Isotope and lightGallery.
-
-   Masonry mirrors Isotope's placement rule: each cell drops into the set of
-   adjacent columns whose tallest point is lowest, left-most wins on a tie.
-   Column counts and per-cell spans come from data attributes so the markup
-   stays declarative.
-   ========================================================================== */
 
 (function () {
   'use strict';
 
   var GAP = 10;
 
-  /* ---------------------------------------------------------------- Masonry */
 
   function Masonry(grid) {
     this.grid = grid;
@@ -55,7 +45,6 @@
     this.cells.forEach(function (cell) {
       var span = this.spanOf(cell, columns);
 
-      // Find the placement whose tallest column is lowest.
       var best = 0;
       var bestY = Infinity;
       for (var c = 0; c <= columns - span; c++) {
@@ -76,7 +65,6 @@
     this.grid.style.height = (Math.max.apply(null, offsets) - GAP) + 'px';
   };
 
-  /* Images without intrinsic sizing change the cell height once decoded. */
   Masonry.prototype.watchImages = function () {
     var images = this.grid.querySelectorAll('img');
     var pending = images.length;
@@ -95,7 +83,6 @@
     }, this);
   };
 
-  /* --------------------------------------------------------------- Lightbox */
 
   function Lightbox() {
     this.items = [];
@@ -134,7 +121,6 @@
     this.el.querySelector('.lightbox-next').addEventListener('click', function () { self.step(1); });
     this.closeBtn.addEventListener('click', function () { self.close(); });
 
-    // Clicking the dim area (but not the picture) closes the viewer.
     this.el.addEventListener('click', function (e) {
       if (e.target === self.el) self.close();
     });
@@ -145,7 +131,6 @@
       else if (e.key === 'ArrowLeft') self.step(-1);
       else if (e.key === 'ArrowRight') self.step(1);
       else if (e.key === 'Tab') {
-        // Keep focus inside the dialog while it is open.
         e.preventDefault();
         self.closeBtn.focus();
       }
@@ -189,7 +174,6 @@
     if (this.lastFocus) this.lastFocus.focus();
   };
 
-  /* ------------------------------------------------------------------- Init */
 
   function init() {
     Array.prototype.forEach.call(
@@ -202,7 +186,6 @@
 
     var lightbox = new Lightbox();
 
-    // Each `data-lightbox` value forms its own navigable set.
     var groups = {};
     triggers.forEach(function (trigger) {
       var name = trigger.getAttribute('data-lightbox');

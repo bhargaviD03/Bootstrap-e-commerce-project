@@ -1,21 +1,9 @@
-/* ==========================================================================
-   Forms
-   Replaces RD Mailform + Select2:
-     - floating labels that fade out on focus / when filled
-     - @Required and @Email constraints, mirroring data-constraints
-     - invalid / valid field states, submit + success + error states
-     - a snackbar for global feedback
-
-   No backend is wired up. `submitForm` is the single seam: swap the
-   simulated promise for a real fetch() to the endpoint of your choice.
-   ========================================================================== */
 
 (function () {
   'use strict';
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
-  /* ------------------------------------------------------------- Snackbar */
 
   var snackbar = {
     node: null,
@@ -39,7 +27,6 @@
     }
   };
 
-  /* --------------------------------------------------------- Field helpers */
 
   function fieldsOf(form) {
     return Array.prototype.slice.call(form.querySelectorAll('[data-constraints]'));
@@ -64,13 +51,11 @@
     label.classList.toggle('is-hidden', focused || isFilled(field));
   }
 
-  /* Returns an error message, or '' when the field is acceptable. */
   function validate(field) {
     var rules = field.getAttribute('data-constraints') || '';
     var value = String(field.value || '').trim();
 
     if (rules.indexOf('@Required') !== -1) {
-      // The placeholder option of a select counts as empty.
       if (field.tagName === 'SELECT' && (value === '' || field.selectedIndex === 0)) {
         return 'Please choose an option';
       }
@@ -107,10 +92,6 @@
     note.textContent = message;
   }
 
-  /* --------------------------------------------------------------- Submit */
-
-  /* Frontend-only stand-in for the server round-trip. Replace the body with
-     a fetch() to connect a real backend; the rest of the flow is unchanged. */
   function submitForm(form, payload) {
     void form;
     void payload;
@@ -128,7 +109,6 @@
     return data;
   }
 
-  /* ----------------------------------------------------------------- Init */
 
   function enhance(form) {
     var fields = fieldsOf(form);
@@ -153,7 +133,6 @@
         showError(field, validate(field));
       });
 
-      // Clear a standing error as soon as the value becomes acceptable.
       field.addEventListener('input', function () {
         syncLabel(field, true);
         var wrap = wrapOf(field);

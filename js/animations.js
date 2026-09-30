@@ -1,15 +1,3 @@
-/* ==========================================================================
-   Scroll-triggered animation system
-   Replaces WOW.js. Declarative API:
-
-     <div data-animation="fadeInUp" data-delay="150" data-duration="700">
-
-   `data-delay`    — milliseconds before the animation starts (default 0)
-   `data-duration` — milliseconds the animation runs (default 700)
-
-   Elements stay hidden until they enter the viewport, then animate once.
-   Without JS or with prefers-reduced-motion the content renders normally.
-   ========================================================================== */
 
 (function () {
   'use strict';
@@ -33,8 +21,6 @@
 
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Mark as JS-controlled so the CSS may hide them; without this class the
-    // content is always visible.
     elements.forEach(function (el) { el.classList.add('js-anim'); });
 
     if (reduced || !('IntersectionObserver' in window)) {
@@ -58,15 +44,11 @@
       });
     }, { threshold: THRESHOLD, rootMargin: '0px 0px -40px 0px' });
 
-    // A large jump (anchor link, End key, restored scroll position) can skip
-    // past elements without ever intersecting them on a rendered frame, so
-    // the observer alone would leave them hidden. This sweep catches them.
     var ticking = false;
 
     function sweep() {
       ticking = false;
       var limit = window.innerHeight;
-      // Copy first: reveal() mutates `pending` while we iterate.
       pending.slice().forEach(function (el) {
         if (el.getBoundingClientRect().top < limit) reveal(el);
       });
@@ -79,8 +61,6 @@
     }
 
     elements.forEach(function (el) {
-      // Reveal anything already on screen, and anything the page has
-      // already scrolled past, immediately.
       if (el.getBoundingClientRect().top < window.innerHeight) {
         play(el);
       } else {

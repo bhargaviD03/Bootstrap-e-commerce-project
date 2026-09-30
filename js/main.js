@@ -1,20 +1,9 @@
-/* ==========================================================================
-   Site behaviour
-     - preloader + page reveal
-     - sticky header, mobile menu, gallery side panel
-     - "winona" button label duplication
-     - testimonials carousel (centre mode, looped)
-     - features carousel (paged, dots)
-     - scroll-to-top
-     - copyright year
-   ========================================================================== */
 
 (function () {
   'use strict';
 
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ------------------------------------------------------------ Preloader */
 
   function initPreloader() {
     var preloader = document.querySelector('.preloader');
@@ -24,7 +13,6 @@
     function reveal() {
       page.classList.add('is-ready');
       if (preloader) preloader.classList.add('loaded');
-      // Keep it out of the a11y tree and off the tab order once hidden.
       setTimeout(function () {
         if (preloader) preloader.setAttribute('aria-hidden', 'true');
       }, 400);
@@ -35,7 +23,6 @@
       return;
     }
 
-    // Show the loader long enough to read as intentional, but never block.
     var MIN_VISIBLE = reducedMotion ? 0 : 600;
     var started = Date.now();
 
@@ -47,11 +34,9 @@
     if (document.readyState === 'complete') finish();
     else window.addEventListener('load', finish);
 
-    // Safety net: never leave the page behind the loader.
     setTimeout(reveal, 6000);
   }
 
-  /* --------------------------------------------------------- Sticky header */
 
   function initStickyHeader() {
     var navbar = document.querySelector('.navbar-main');
@@ -69,7 +54,6 @@
     function update() {
       ticking = false;
 
-      // Only stick on layouts where the desktop bar is in play.
       if (window.innerWidth < 992) {
         if (stuck) unstick();
         return;
@@ -104,10 +88,6 @@
     update();
   }
 
-  /* ----------------------------------------------------------- Mobile menu */
-
-  /* Bootstrap Collapse drives the panel itself; this only closes it after a
-     link is tapped, which Bootstrap does not do on its own. */
   function initMobileMenu() {
     var target = document.getElementById('primary-navigation');
     if (!target || !window.bootstrap) return;
@@ -120,10 +100,6 @@
     });
   }
 
-  /* --------------------------------------------------------- Winona buttons */
-
-  /* Duplicates each button's label so the hover effect can slide one out
-     while the other slides in. */
   function initWinonaButtons() {
     Array.prototype.forEach.call(
       document.querySelectorAll('.btn-custom:not([data-no-winona])'),
@@ -137,7 +113,6 @@
     );
   }
 
-  /* -------------------------------------------------- Testimonials carousel */
 
   function initTestimonials() {
     var root = document.querySelector('[data-testimonials]');
@@ -149,8 +124,6 @@
     var count = originals.length;
     if (!count) return;
 
-    // Three copies give room to scroll either way before we silently jump
-    // back to the middle set.
     originals.forEach(function (item) {
       track.insertBefore(item.cloneNode(true), track.firstChild);
     });
@@ -159,7 +132,7 @@
     });
 
     var items = Array.prototype.slice.call(track.children);
-    var index = count; // centre of the middle set
+    var index = count;
     var timer = null;
     var animating = false;
 
@@ -190,7 +163,6 @@
       clearTimeout(settleTimer);
       animating = false;
 
-      // Snap back into the middle set so the loop never runs out of slides.
       if (index < count || index >= count * 2) {
         index = count + (((index - count) % count) + count) % count;
         place(false);
@@ -203,9 +175,6 @@
       index += delta;
       place(true);
 
-      // `transitionend` does not fire when the transition is suppressed
-      // (reduced motion, off-screen, an unchanged transform). Without this
-      // fallback the carousel would latch and never advance again.
       clearTimeout(settleTimer);
       settleTimer = setTimeout(settle, 600);
     }
@@ -219,7 +188,6 @@
     if (prev) prev.addEventListener('click', function () { step(-1); restart(); });
     if (next) next.addEventListener('click', function () { step(1); restart(); });
 
-    // Clicking a side card brings it to the centre.
     track.addEventListener('click', function (e) {
       var item = e.target.closest('.testimonial-item');
       if (!item || item.classList.contains('is-center')) return;
@@ -252,7 +220,6 @@
     start();
   }
 
-  /* ------------------------------------------------------ Features carousel */
 
   function initFeatures() {
     var root = document.querySelector('[data-features]');
@@ -314,7 +281,6 @@
     layout();
   }
 
-  /* ------------------------------------------------------- Scroll to top */
 
   function initScrollTop() {
     var button = document.querySelector('.ui-to-top');
@@ -340,7 +306,6 @@
     update();
   }
 
-  /* --------------------------------------------------------------- Misc */
 
   function initCopyrightYear() {
     Array.prototype.forEach.call(

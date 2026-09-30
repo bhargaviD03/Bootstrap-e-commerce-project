@@ -1,22 +1,8 @@
-/* ==========================================================================
-   Animation system
-   Replaces WOW.js + animate.css with a small declarative layer driven by
-   IntersectionObserver (js/animations.js).
-
-     <div data-animation="fadeInUp" data-delay="150" data-duration="700">
-
-   Keyframes and timings are ported 1:1 from the original template's
-   style.css (.animated => .7s, fill-mode both; fade* travel 40px,
-   slide* travel 100%).
-   ========================================================================== */
 
 :root {
   --anim-duration: 0.7s;
 }
 
-/* Elements queued for a scroll-triggered animation are hidden until the
-   observer fires. `.js-anim` is added by JS so the content stays visible
-   when JavaScript is unavailable. */
 .js-anim[data-animation] {
   visibility: hidden;
   animation-duration: var(--anim-duration);
@@ -27,11 +13,6 @@
   visibility: visible;
 }
 
-/* `.oh-desktop` clips so slideIn* animations wipe in from the edge of their
-   own box — the original scopes this to `.desktop`, i.e. >= 992px only.
-   `.oh` is deliberately NOT a clipping context: the reference declares the
-   class but never gives it `overflow: hidden`, so the hero headline is
-   allowed to spill past its column instead of being cut off. */
 .oh {
   position: relative;
 }
@@ -50,7 +31,6 @@
   }
 }
 
-/* Keyframes -------------------------------------------------------------- */
 
 @keyframes fadeIn {
   0%   { opacity: 0; }
@@ -97,7 +77,6 @@
   100% { transform: translate3d(0, 0, 0); }
 }
 
-/* Animation-name bindings ------------------------------------------------ */
 
 [data-animation="fadeIn"].is-animated      { animation-name: fadeIn; }
 [data-animation="fadeInUp"].is-animated    { animation-name: fadeInUp; }
@@ -109,9 +88,6 @@
 [data-animation="slideInLeft"].is-animated  { animation-name: slideInLeft; }
 [data-animation="slideInRight"].is-animated { animation-name: slideInRight; }
 
-/* Hero caption animations ------------------------------------------------
-   Driven by js/slider.js rather than the observer: captions replay on every
-   slide change, so they get their own not-animated / is-animated pair. */
 
 .hero-caption-anim {
   visibility: hidden;
@@ -130,9 +106,7 @@
   }
 }
 
-/* Component keyframes ---------------------------------------------------- */
 
-/* Preloader: penrose-triangle wipe (ported from the original). */
 @keyframes tri  { 0% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes tri1 { 0%, 0%        { opacity: 0; } 100% { opacity: 1; } }
 @keyframes tri2 { 0%, 14.28571% { opacity: 0; } 100% { opacity: 1; } }
@@ -147,11 +121,9 @@
   100% { transform: scale(0.5); }
 }
 
-/* Hamburger bar sweep on the gallery-panel trigger. */
 @keyframes pagInX  { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }
 @keyframes pagOutX { 0% { transform: translateX(0); }    100% { transform: translateX(100%); } }
 
-/* Looping tint cycle on the feature icons. */
 @keyframes iconClassic {
   30%  { color: #151515; background: #f3f3f3; }
   33%  { color: #ffffff; background: #6046b6; }
