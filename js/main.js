@@ -306,7 +306,6 @@
     update();
   }
 
-
   function initCopyrightYear() {
     Array.prototype.forEach.call(
       document.querySelectorAll('.copyright-year'),

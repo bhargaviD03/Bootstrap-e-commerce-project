@@ -133,6 +133,7 @@
         showError(field, validate(field));
       });
 
+
       field.addEventListener('input', function () {
         syncLabel(field, true);
         var wrap = wrapOf(field);
@@ -209,3 +210,6 @@
     init();
   }
 })();
+
+
+

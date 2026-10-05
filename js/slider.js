@@ -147,7 +147,6 @@
     var active = Array.prototype.slice.call(
       slide.querySelectorAll('[data-caption-animate]')
     );
-
     void this.root.offsetWidth;
 
     active.forEach(function (item) {
